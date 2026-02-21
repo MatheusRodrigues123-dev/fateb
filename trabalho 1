@@ -1,0 +1,23 @@
+cliente = input('Nome do cliente: ')
+saldo = float(input('Saldo inicial: '))
+limite = float(input('Limite da conta: '))
+movimentacao = int(input('1 para saque | 2 para deposito: '))
+
+if movimentacao == 1:
+    movimentacao = float(input('Digite o valor do saque: '))
+    
+    saldo = saldo + limite   # soma saldo + limite
+    
+    if movimentacao > saldo:
+        print('Saldo insuficiente')
+    else:
+        saldo -= movimentacao
+        print(f'Novo saldo disponível: {saldo:.2f}')
+
+elif movimentacao == 2:
+    movimentacao = float(input('Digite o valor do deposito: '))
+    saldo += movimentacao
+    print(f'Novo saldo: {saldo:.2f}')
+
+else:
+    print('Opcao invalida')
